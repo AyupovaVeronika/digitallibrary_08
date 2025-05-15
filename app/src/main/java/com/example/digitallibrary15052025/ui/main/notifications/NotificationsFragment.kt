@@ -1,4 +1,4 @@
-package com.example.digitallibrary15052025.ui.notifications
+package com.example.digitallibrary15052025.ui.main.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

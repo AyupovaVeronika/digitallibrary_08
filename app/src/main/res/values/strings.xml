@@ -1,6 +1,47 @@
 <resources>
-    <string name="app_name">digitallibrary15052025</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">Цифровая библиотека2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    <string name="no_data">No Data</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="sort_by">Sort By</string>
+    <string name="search">Search</string>
+    <string name="priority_high">Priority High</string>
+    <string name="priority_low">Priority Low</string>
+    <string name="delete_all">Delete All</string>
+    <string name="add">Add</string>
+    <string name="save">Save</string>
+    <string name="delete" translatable="false">Delete</string>
+
+    <string-array name="priorities">
+        <item>High Priority</item>
+        <item>Medium Priority</item>
+        <item>Low Priority</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_app"><b>о приложении</b></string>
+    <string name="info_app">Приложение для работы с текстовыми файлами</string>
+    <string name="version">Версия 0.0.0</string>
+    <string name="developer">Разработчик: Аюпова Вероника</string>
+    <string name="artist">Художник: Руфова Анастасия</string>
+    <string name="sign_in">Вход</string>
+    <string name="Email">Почта</string>
+    <string name="Password">Пароль</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="Forgot_password">Забыли пароль?</string>
+    <string name="Login">Логин</string>
+    <string name="PasswordAgan">Подтверждение пароля</string>
+    <string name="title_home">home\n</string>
+    <string name="title_dashboard">dashboard\n</string>
+    <string name="title_notifications">notification\n</string>
+
+
 </resources>

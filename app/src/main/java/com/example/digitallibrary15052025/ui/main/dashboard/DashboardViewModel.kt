@@ -1,4 +1,4 @@
-package com.example.digitallibrary15052025.ui.dashboard
+package com.example.digitallibrary15052025.ui.main.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
