@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="MyToolbarStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:colorBackground">#00000000</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="NavMenuItemStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:layout_marginBottom">25dp</item>
+    </style>
+    <style name="NavViewTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="itemTextAppearance">@style/NavMenuItemStyle</item>
+        <item name="itemIconTint">@color/white</item>
+    </style>
+    <style name="LeftMenuStyle" parent="Widget.Material3.NavigationView">
+        <!-- Цвет иконок -->
+        <item name="itemIconTint">@color/grey</item>
 
+        <!-- Цвет текста -->
+        <item name="itemTextColor">@color/grey</item>
+
+        <!-- Фон меню -->
+        <item name="itemBackground">@drawable/background_menu</item>
+
+        <!-- Размер текста -->
+        <item name="android:textSize">16dp</item>
+
+        <!-- Шрифт -->
+        <!-- Шрифт <item name="android:fontFamily">@font/roboto_medium</item>-->
+        <item name="android:paddingTop">@dimen/nav_item_padding</item>
+        <item name="android:paddingBottom">@dimen/nav_item_padding</item>
+
+    </style>
 </resources>

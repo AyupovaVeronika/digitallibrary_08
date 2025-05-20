@@ -13,8 +13,8 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
         <androidx.cardview.widget.CardView
-            android:layout_width="306sp"
-            android:layout_height="328sp"
+            android:layout_width="306dp"
+            android:layout_height="378dp"
             android:layout_marginTop="161dp"
             android:layout_marginHorizontal="30dp"
             app:cardCornerRadius="30dp">
@@ -33,83 +33,79 @@
                     android:text="@string/sign_in"
                     android:letterSpacing="0.14"
                     android:textAllCaps="true"
-                    android:textSize="27sp"
+                    android:textSize="37dp"
                     android:layout_marginTop="52dp"/>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="52dp"
-                    android:layout_marginTop="33dp">
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginTop="33dp"
+                    android:hint="@string/Email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/emailSingInText"
-                        android:background="@android:color/transparent"
                         android:layout_width="match_parent"
-                        android:layout_height="25sp"
-                        android:textColorHint="@color/hint"
-                        android:textSize="14sp"/>
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:padding="12dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:inputType="textEmailAddress"/>
                 </com.google.android.material.textfield.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/Email"
-                    android:layout_marginHorizontal="52dp"
-                    android:textColor="@color/hint">
-                </TextView>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="52dp">
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/Password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/passwordSingInText"
                         android:layout_width="match_parent"
-                        android:background="@android:color/transparent"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="6dp"
-                        android:textSize="14sp"/>
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:padding="12dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:inputType="textPassword"/>
                 </com.google.android.material.textfield.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/Password"
-                    android:layout_marginHorizontal="52dp"
-                    android:textColor="@color/hint">
-                </TextView>
                 <Button
-                    android:id="@+id/vhod_button"
+                    android:id="@+id/singin_button"
                     android:layout_width="174dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="38dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="30dp"
                     android:gravity="center"
                     android:text="@string/sign_in"
                     android:textColor="@color/white"
                     android:textAllCaps="false"
                     android:background="@drawable/lavender_fill"
-                    android:textSize="14sp"/>
+                    android:textSize="20dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <Button
             android:id="@+id/singin_to_singup"
             android:layout_width="174dp"
             android:textAllCaps="false"
-            android:layout_height="40dp"
-            android:layout_marginTop="88dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="58dp"
             android:gravity="center"
             android:textColor="@color/white"
             android:background="@drawable/lavender_fill"
             android:text="@string/sign_up"
-            android:textSize="14sp"/>
+            android:textSize="20dp"/>
         <Button
             android:id="@+id/singin_to_forgotpassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="5dp"
             android:textAllCaps="false"
             android:gravity="center"
             android:textColor="@color/white"
             android:text="@string/Forgot_password"
             android:background="@android:color/transparent"
-            android:textSize="14sp"/>
+            android:textSize="14dp"/>
     </LinearLayout>
 </ScrollView>

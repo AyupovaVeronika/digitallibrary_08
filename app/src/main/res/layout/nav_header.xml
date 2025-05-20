@@ -1,0 +1,28 @@
+<!-- res/layout/nav_header.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100.84dp"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="@color/lavender"
+    android:paddingTop="?attr/actionBarSize">
+
+    <ImageButton
+        android:id="@+id/nav_profil"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/shape_profil">
+
+    </ImageButton>
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:text="Имя пользователя"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:textSize="13sp"/>
+</LinearLayout>

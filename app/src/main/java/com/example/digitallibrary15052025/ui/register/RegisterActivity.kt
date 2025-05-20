@@ -14,9 +14,12 @@ class RegisterActivity: AppCompatActivity(),NavigationView.OnNavigationItemSelec
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)// вызов родительского метода
         setContentView(R.layout.activity_register)
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerViewRegister) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_register) as NavHostFragment
         navController = navHostFragment.navController
         supportActionBar?.hide()//отключение бара
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

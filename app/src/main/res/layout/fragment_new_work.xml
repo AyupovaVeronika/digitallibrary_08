@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.NewWorkFragment"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:padding="30dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Новая работа"
+        android:textSize="30dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/addNoteHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Добавить заметку"
+        android:textStyle="bold"
+        android:textColor="@color/lavender"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/addNoteTitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Введите заголовок"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:textColor="@color/dark_grey"
+        android:background="@drawable/white_fill"
+        android:layout_marginTop="16dp"
+        android:maxLines="1"/>
+    <EditText
+        android:id="@+id/addNoteDesc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Введите описание"
+        android:gravity="top"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:textColor="@color/dark_grey"
+        android:background="@drawable/white_fill"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>
+

@@ -14,114 +14,111 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
         <androidx.cardview.widget.CardView
-            android:layout_width="306sp"
-            android:layout_height="352sp"
+            android:layout_width="306dp"
+            android:layout_height="402dp"
             android:layout_marginTop="147dp"
             android:layout_marginHorizontal="30dp"
             app:cardCornerRadius="30dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
+                android:background="@drawable/dark_grey_fill"
                 android:gravity="center_horizontal"
-                android:background="@drawable/dark_grey_fill">
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_marginTop="51dp"
                     android:fontFamily="@font/montserrat_bold_bold"
-                    android:textColor="@color/lavender"
+                    android:gravity="center"
                     android:text="@string/sign_up"
                     android:textAllCaps="true"
-                    android:textSize="27sp"
-                    android:layout_marginTop="51dp"/>
+                    android:textColor="@color/lavender"
+                    android:textSize="27dp" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="52dp"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginTop="23dp"
+                    android:hint="@string/Email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/emailSingUpText"
-                        android:background="@android:color/transparent"
                         android:layout_width="match_parent"
-                        android:layout_height="25dp"
-                        android:textColorHint="@color/hint"
-                        android:textSize="14sp"/>
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:padding="12dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:inputType="textEmailAddress"/>
                 </com.google.android.material.textfield.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/Email"
-                    android:layout_marginHorizontal="52dp"
-                    android:textColor="@color/hint">
-                </TextView>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="52dp">
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/Password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/passwordSingUpText"
                         android:layout_width="match_parent"
-                        android:background="@android:color/transparent"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="6dp"
-                        android:textSize="14sp"/>
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:padding="12dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:inputType="textPassword"/>
                 </com.google.android.material.textfield.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/Password"
-                    android:layout_marginHorizontal="52dp"
-                    android:textColor="@color/hint">
-                </TextView>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="52dp"
-                    android:layout_marginTop="6dp">
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/Password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/passwordAgainSingUpText"
-                        android:background="@android:color/transparent"
                         android:layout_width="match_parent"
-                        android:layout_height="25dp"
-                        android:textColorHint="@color/hint"
-                        android:textSize="14sp"/>
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:padding="12dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:inputType="textPassword"/>
                 </com.google.android.material.textfield.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/PasswordAgan"
-                    android:layout_marginHorizontal="52dp"
-                    android:textColor="@color/hint">
-                </TextView>
+
                 <Button
                     android:id="@+id/singup_button"
                     android:layout_width="174dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="38dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="28dp"
                     android:layout_marginBottom="20dp"
+                    android:background="@drawable/lavender_fill"
                     android:gravity="center"
                     android:text="@string/sign_up"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:background="@drawable/lavender_fill"
-                    android:textSize="14sp"
-                    android:textAllCaps="false"/>
+                    android:textSize="20dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <Button
             android:textAllCaps="false"
             android:id="@+id/singup_to_singin"
             android:layout_width="174dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="85dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="55dp"
             android:gravity="center"
             android:textColor="@color/white"
             android:background="@drawable/lavender_fill"
             android:text="@string/sign_in"
-            android:textSize="14sp"/>
+            android:textSize="20dp"/>
     </LinearLayout>
 </ScrollView>
 

@@ -1,5 +1,6 @@
 <resources>
     <color name="lavender">#8692F8</color>
+    <color name="lavender_50">#808692F8</color>
     <color name="grey">#555050</color>
     <color name="dark_grey">#322F2F</color>
     <color name="black">#000000</color>
@@ -18,6 +19,6 @@
     <color name="search_background">#E3E1E3</color>
     <color name="yellow">#FFC114</color>
     <color name="green">#00C980</color>
-
     <color name="black50">#80000000</color>
+    <color name="background_menu">#ECE6F0</color>
 </resources>
