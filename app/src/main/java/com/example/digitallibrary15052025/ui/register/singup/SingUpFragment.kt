@@ -1,6 +1,8 @@
 package com.example.digitallibrary15052025.ui.register.singup
 
 import android.os.Bundle
+import android.util.Log
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,23 +34,22 @@ class SingUpFragment : Fragment() {
             val password = binding.passwordSingUpText.text.toString()
             val passwordAgain = binding.passwordAgainSingUpText.text.toString()
 
-            if (email.isNotEmpty() && password.isNotEmpty() && passwordAgain.isNotEmpty()) {
-                if (password == passwordAgain) {
-                    firebaseAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                // Navigate to VhodFragment on successful signup
-                                findNavController().navigate(R.id.singup_to_singin)
-                            } else {
-                                // Show error message if signup fails
-                                Toast.makeText(activity, task.exception?.message ?: "Не удалось зарегистрироваться", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                } else {
-                    Toast.makeText(activity, "Пароли не совпадают", Toast.LENGTH_SHORT).show()
+            when {
+                email.isEmpty() || password.isEmpty() || passwordAgain.isEmpty() -> {
+                    showToast("Все поля обязательны для заполнения")
                 }
-            } else {
-                Toast.makeText(activity, "Все поля обязательны для заполнения", Toast.LENGTH_SHORT).show()
+                !isEmailValid(email) -> {
+                    showToast("Введите корректный email")
+                }
+                password.length < 6 -> {
+                    showToast("Пароль должен содержать минимум 6 символов")
+                }
+                password != passwordAgain -> {
+                    showToast("Пароли не совпадают")
+                }
+                else -> {
+                    registerUser(email, password)
+                }
             }
         }
 
@@ -62,5 +63,30 @@ class SingUpFragment : Fragment() {
             findNavController().navigate(R.id.action_singUpFragment_to_singInFragment)
         }
 
+
     }
+    private fun isEmailValid(email: String): Boolean {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
+    private fun registerUser(email: String, password: String) {
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    findNavController().navigate(R.id.action_singUpFragment_to_singInFragment)
+                } else {
+                    Log.e("SignUpError", "Registration failed", task.exception)
+                    showToast(task.exception?.message ?: "Ошибка регистрации")
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e("SignUpError", "Firebase error", e)
+                showToast("Ошибка соединения с сервером")
+            }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    }
+
 }

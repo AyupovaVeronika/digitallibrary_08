@@ -3,8 +3,12 @@
     <color name="lavender_50">#808692F8</color>
     <color name="grey">#555050</color>
     <color name="dark_grey">#322F2F</color>
+    <color name="dark_dark_grey">#322F2F</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="blue">#27398E</color>
+    <color name="dark_blue">#161238</color>
+    <color name="baby_blue">#C6D3FA</color>
     <color name="error">#FF5449</color>
     <color name="purple_200">#8692F8</color>
     <color name="purple_500">#FF6200EE</color>

@@ -2,6 +2,8 @@ package com.example.digitallibrary15052025.ui.register.singin
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +14,8 @@ import com.example.digitallibrary15052025.ui.main.MainActivity
 import com.example.digitallibrary15052025.R
 import com.example.digitallibrary15052025.databinding.FragmentSingInBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
 
 class SingInFragment : Fragment() {
     private var _binding: FragmentSingInBinding? = null
@@ -46,17 +50,36 @@ class SingInFragment : Fragment() {
             email.isEmpty() || password.isEmpty() -> {
                 showToast("Поля не могут быть пустыми")
             }
+            !isEmailValid(email) -> {
+                showToast("Введите корректный email")
+            }
             else -> {
-                firebaseAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            navigateToMainActivity()
-                        } else {
-                            showToast(task.exception?.message ?: "Ошибка входа")
-                        }
-                    }
+                signInUser(email, password)
             }
         }
+    }
+
+    private fun signInUser(email: String, password: String) {
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    navigateToMainActivity()
+                } else {
+                    Log.e("SignInError", "Authentication failed", task.exception)
+                    when (task.exception) {
+                        is FirebaseAuthInvalidUserException ->
+                            showToast("Пользователь не найден")
+                        is FirebaseAuthInvalidCredentialsException ->
+                            showToast("Неверный email или пароль")
+                        else ->
+                            showToast(task.exception?.message ?: "Ошибка входа")
+                    }
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e("SignInError", "Firebase error", e)
+                showToast("Ошибка соединения с сервером")
+            }
     }
 
     private fun navigateToSingUp() {
@@ -81,5 +104,8 @@ class SingInFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+    private fun isEmailValid(email: String): Boolean {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 }
